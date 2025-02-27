@@ -1,4 +1,4 @@
-import { multiply } from '@spons/ui-react-native';
+import { multiply } from 'spons-react-native-ui';
 import { Text, View, StyleSheet } from 'react-native';
 
 const result = multiply(3, 7);

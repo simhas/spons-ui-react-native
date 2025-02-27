@@ -1,5 +1,5 @@
 {
-  "name": "@spons/ui-react-native-example",
+  "name": "spons-react-native-ui-example",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "react-native-builder-bob": "^0.36.0"
+    "react-native-builder-bob": "^0.37.0"
   },
   "private": true
 }

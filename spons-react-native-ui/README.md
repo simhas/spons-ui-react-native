@@ -1,18 +1,18 @@
-# @spons/ui-react-native
+# spons-react-native-ui
 
-React native ui components
+ui lib for spons
 
 ## Installation
 
 ```sh
-npm install @spons/ui-react-native
+npm install spons-react-native-ui
 ```
 
 ## Usage
 
 
 ```js
-import { multiply } from '@spons/ui-react-native';
+import { multiply } from 'spons-react-native-ui';
 
 // ...
 
