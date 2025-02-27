@@ -1,7 +1,7 @@
 {
   "name": "@spons/ui-react-native",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "React native ui components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
