@@ -184,5 +184,6 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.3"
-  }
+  },
+  "private": false
 }
