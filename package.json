@@ -1,7 +1,7 @@
 {
   "name": "@spons/ui-react-native",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React native ui components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -62,7 +62,8 @@
   },
   "homepage": "https://github.com/simhas/spons-ui-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.7.1",
@@ -184,6 +185,5 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.3"
-  },
-  "private": false
+  }
 }
