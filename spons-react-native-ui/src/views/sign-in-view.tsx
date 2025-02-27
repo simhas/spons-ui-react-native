@@ -1,18 +1,21 @@
-import { View, ImageBackground, Pressable, StyleSheet } from "react-native";
+import { View, ImageBackground, Pressable, StyleSheet, type ImageSourcePropType } from "react-native";
 import { SpTypo } from '../components/sp-typo';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome';
 import { useTheme } from '../theme-provider';
 
 interface SignInViewProps {
     onSignIn: () => void;
+    backgroundImageSource?: ImageSourcePropType | undefined
+    title?: string
+    text?: string
 }
 
-export function SignInView({ onSignIn }: SignInViewProps) {
+export function SignInView({ onSignIn, backgroundImageSource, title, text }: SignInViewProps) {
     const theme = useTheme();
 
     return (
         <ImageBackground
-            source={require('../assets/images/golf-heading.jpg')}
+            source={backgroundImageSource}
             style={{ flex: 1, height: '100%', width: '100%' }}
             resizeMode="cover"
         >
@@ -33,10 +36,8 @@ export function SignInView({ onSignIn }: SignInViewProps) {
                     styles.glassmorphism,
                 ]}>
                     <View style={styles.headerContainer}>
-                        <SpTypo variant="h1">Welcome to Spons.gg</SpTypo>
-                        <SpTypo variant="lead" color="muted">
-                            Connect with athletes, track your progress, and unlock your full potential.{'\n'}{'\n'}Join our community of dedicated athletes today.
-                        </SpTypo>
+                        <SpTypo variant="h1">{title}</SpTypo>
+                        <SpTypo variant="lead" color="muted">{text}</SpTypo>
                     </View>
 
                     <View>
