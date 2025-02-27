@@ -2239,7 +2239,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/vector-icons@npm:^14.0.0":
+"@expo/vector-icons@npm:^14.0.0, @expo/vector-icons@npm:^14.0.4":
   version: 14.0.4
   resolution: "@expo/vector-icons@npm:14.0.4"
   dependencies:
@@ -12832,6 +12832,7 @@ __metadata:
   dependencies:
     "@commitlint/config-conventional": ^19.7.1
     "@evilmartians/lefthook": ^1.5.0
+    "@expo/vector-icons": ^14.0.4
     "@react-native/eslint-config": ^0.73.1
     "@release-it/conventional-changelog": ^9.0.2
     "@types/jest": ^29.5.5

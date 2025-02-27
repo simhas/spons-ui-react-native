@@ -184,5 +184,8 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.3"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.4"
   }
 }
