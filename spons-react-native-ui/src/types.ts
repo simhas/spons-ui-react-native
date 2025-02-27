@@ -1,11 +1,13 @@
 export interface SpTheme {
     colors: {
-        text: string;
+        foreground: string;
+        mutedForeground: string;
     }
 }
 
 export const defaultTheme: SpTheme = {
     colors: {
-        text: "#000000",
+        foreground: "#E5E5E7",
+        mutedForeground: "#9CA3AF",
     }
 }
