@@ -4,7 +4,7 @@
   "description": "ui lib for spons",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index",
-  "module": "dist/index",
+  "module": "./lib/commonjs/index",
   "exports": {
     ".": {
       "import": {
