@@ -8,3 +8,4 @@ export { SpButton } from './components/sp-button';
 export { SpTypo } from './components/sp-typo';
 export { SignInView } from './views/sign-in-view';
 export { handleAuthCodeExchange } from './utils/handle-auth-code-exchange';
+export { useAuthSetup } from './utils/use-auth-setup';

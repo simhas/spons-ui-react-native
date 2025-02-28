@@ -5,6 +5,7 @@
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index",
   "module": "./lib/commonjs/index",
+  "types": "./lib/commonjs/index",
   "exports": {
     ".": {
       "import": {
