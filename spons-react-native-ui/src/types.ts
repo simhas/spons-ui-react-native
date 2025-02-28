@@ -17,7 +17,7 @@ export const defaultTheme: SpTheme = {
         foreground: "#E5E5E7",
 
         primary: "#2563eb",
-        primaryForeground: "#0F172A",
+        primaryForeground: "#f9fafb",
 
         muted: "#262626",
         mutedForeground: "#A3A3A6",

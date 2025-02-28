@@ -10,7 +10,7 @@ interface SpButtonProps extends PressableProps {
 }
 
 export function SpButton(props: SpButtonProps) {
-    const { children, onPress, disabled, isLoading, style, variant = "default", color = "muted" } = props
+    const { children, onPress, disabled, isLoading, style, variant = "default", color = "primary" } = props
     const theme = useTheme()
 
     const getColors = (colorKey: "primary" | "muted") => ({

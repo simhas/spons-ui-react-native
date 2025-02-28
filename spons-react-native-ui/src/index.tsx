@@ -3,7 +3,7 @@ export function multiply(a: number, b: number): number {
 }
 
 export * from './types';
-export * from './theme-provider';
+export { useTheme, SpThemeProvider } from './theme-provider';
 export { SpButton } from './components/sp-button';
 export { SpTypo } from './components/sp-typo';
 export { SignInView } from './views/sign-in-view';
