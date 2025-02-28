@@ -1,6 +1,11 @@
 export interface SpTheme {
     colors: {
         foreground: string;
+
+        primary: string;
+        primaryForeground: string;
+
+        muted: string;
         mutedForeground: string;
 
         card: string
@@ -10,7 +15,12 @@ export interface SpTheme {
 export const defaultTheme: SpTheme = {
     colors: {
         foreground: "#E5E5E7",
-        mutedForeground: "#9CA3AF",
+
+        primary: "#2563eb",
+        primaryForeground: "#0F172A",
+
+        muted: "#262626",
+        mutedForeground: "#A3A3A6",
 
         card: "#0D1511",
     }
