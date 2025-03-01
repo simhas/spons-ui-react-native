@@ -1,41 +1,51 @@
 import { useState, useEffect } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
+import * as Crypto from 'expo-crypto';
 
 export const useAuthSetup = (supabase: SupabaseClient) => {
 
-  const [profileId, setProfileId] = useState<string | null | undefined>(undefined);
-  const [userId, setUserId] = useState<string | null | undefined>(undefined);
-
-  useEffect(() => {
-    async function loadState(userId: string | null) {
-      var profile = await supabase.from('profile').select().eq('id', userId).maybeSingle()
-      if (!profile.data) {
-        setProfileId(null)
-      }
-      else {
-        setProfileId(profile.data?.id)
-      }
-    }
-
-    if (userId !== null && userId !== undefined) {
-      loadState(userId)
-    }
-  }, [userId])
+  const [state, setState] = useState<"sign-in" | "ok" | undefined>(undefined);
 
   useEffect(() => {
 
-    //supabase.auth.getSession().then(({ data: { session } }) => {
-    //})
+    async function setup() {
+        var response = await supabase.from('profile').select('*').maybeSingle()
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      setUserId(session?.user?.id ?? null)
-    })
+        if (!response.data) {
 
-    // Clean up by calling unsubscribe when component unmounts
-    return () => {
-      subscription.unsubscribe()
+            var auth = await supabase.auth.getUser()
+            if (auth.error || !auth.data.user) {
+                setState('sign-in')
+                return
+            }
+
+            const sha256Text = await Crypto.digestStringAsync(
+                Crypto.CryptoDigestAlgorithm.SHA256,
+                auth.data.user.email ?? "");
+
+            var profile = await supabase.from('profile').insert({
+                id: auth.data.user.id,
+                user_id: auth.data.user.id,
+                first_name: auth.data.user.user_metadata.given_name,
+                last_name: auth.data.user.user_metadata.family_name,
+                display_name: auth.data.user.user_metadata.name,
+                email: auth.data.user.email,
+                email_hash: sha256Text,
+            })
+
+            if (profile.error) {
+                console.log("profile error: ", profile.error)
+                setState('sign-in')
+                return
+            }
+        }
+
+        //await delay(1000)
+        setState('ok')
     }
-  }, [])
 
-  return { profileId, userId };
+    setup()
+}, [])
+
+  return { state };
 };
