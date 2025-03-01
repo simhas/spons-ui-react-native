@@ -1,15 +1,14 @@
 import type { ViewStyle } from "react-native";
-import type { StyleProp } from "react-native";
+import type { StyleProp, PressableProps } from "react-native";
 import { Pressable, StyleSheet } from "react-native";
 import { useTheme } from "../theme-provider";
 
-interface SpCardProps {
-    children: React.ReactNode;
+interface SpCardProps extends PressableProps {
     style?: StyleProp<ViewStyle>;
-    onPress?: () => void;
 }
 
-export function SpCard({ children, style, onPress }: SpCardProps) {
+export function SpCard(props: SpCardProps) {
+    const { children, style, onPress, ...rest } = props;
 
     const theme = useTheme();
 
@@ -25,7 +24,7 @@ export function SpCard({ children, style, onPress }: SpCardProps) {
                 style,
                 { opacity: pressed ? 0.8 : 1 }
             ]}
-            onPress={onPress}
+            {...rest}
         >
             {children}
         </Pressable>
@@ -35,7 +34,6 @@ export function SpCard({ children, style, onPress }: SpCardProps) {
 const styles = StyleSheet.create({
     card: {
         borderRadius: 12,
-        padding: 16,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
