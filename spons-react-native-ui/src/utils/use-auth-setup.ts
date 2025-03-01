@@ -40,7 +40,6 @@ export const useAuthSetup = (supabase: SupabaseClient) => {
             }
         }
 
-        //await delay(1000)
         setState('ok')
     }
 
