@@ -5,7 +5,7 @@ export function multiply(a: number, b: number): number {
 export * from './types';
 export { useTheme, SpThemeProvider } from './theme-provider';
 export { SpButton } from './components/sp-button';
-export { SpCard } from './components/sp-card';
+export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpTypo } from './components/sp-typo';
 export { LoadingView } from './views/loading-view';
 export { SignInView } from './views/sign-in-view';
