@@ -23,10 +23,10 @@ export function SpCard(props: SpCardProps) {
         outline: {
             backgroundColor: "transparent",
             borderWidth: 1,
-            borderColor: theme.colors.border
+            borderColor: theme.colors.primaryOnBackground
         },
     } as const;
-
+    
     if (!onPress) {
         return (
             <View
