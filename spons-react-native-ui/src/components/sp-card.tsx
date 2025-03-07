@@ -17,13 +17,13 @@ export function SpCard(props: SpCardProps) {
     const variantStyles = {
         default: {
             backgroundColor: theme.colors.card,
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: theme.colors.border,
         },
         outline: {
             backgroundColor: "transparent",
-            borderWidth: 2,
-            borderColor: "#1e293b",
+            borderWidth: 1,
+            borderColor: theme.colors.border
         },
     } as const;
 
