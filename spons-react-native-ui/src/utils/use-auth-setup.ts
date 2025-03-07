@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { SupabaseClient } from '@supabase/supabase-js';
 import * as Crypto from 'expo-crypto';
 
-export const useAuthSetup = (supabase: SupabaseClient) => {
+export const useAuthSetup = (
+    supabase: SupabaseClient
+) => {
 
   const [state, setState] = useState<"sign-in" | "ok" | undefined>(undefined);
 

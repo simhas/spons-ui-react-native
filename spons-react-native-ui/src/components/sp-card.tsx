@@ -5,24 +5,34 @@ import { useTheme } from "../theme-provider";
 
 interface SpCardProps extends ViewProps {
     style?: StyleProp<ViewStyle>;
+    variant?: "default" | "outline";
     onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
 }
 
 export function SpCard(props: SpCardProps) {
-    const { children, style, onPress, ...rest } = props;
+    const { children, style, onPress, variant = "default", ...rest } = props;
 
     const theme = useTheme();
+
+    const variantStyles = {
+        default: {
+            backgroundColor: theme.colors.card,
+            borderWidth: 1,
+            borderColor: theme.colors.border,
+        },
+        outline: {
+            backgroundColor: "transparent",
+            borderWidth: 1,
+            borderColor: theme.colors.card,
+        },
+    } as const;
 
     if (!onPress) {
         return (
             <View
                 style={[
                     styles.card,
-                    {
-                        backgroundColor: theme.colors.card,
-                        borderWidth: 1,
-                        borderColor: theme.colors.border,
-                    },
+                    variantStyles[variant],
                     style
                 ]}
                 {...rest}
@@ -36,14 +46,11 @@ export function SpCard(props: SpCardProps) {
         <Pressable
             style={({ pressed }) => [
                 styles.card,
-                {
-                    backgroundColor: theme.colors.card,
-                    borderWidth: 1,
-                    borderColor: theme.colors.border,
-                },
+                variantStyles[variant],
                 style,
                 { opacity: pressed ? 0.8 : 1 }
             ]}
+            onPress={onPress}
             {...rest}
         >
             {children}

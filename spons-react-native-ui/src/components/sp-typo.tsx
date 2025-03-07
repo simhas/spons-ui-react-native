@@ -2,7 +2,7 @@ import { Text, type TextProps } from "react-native";
 import { useTheme } from '../theme-provider';
 
 interface SpTypoProps extends TextProps {
-    variant?: "h1" | "lead" | "body";
+    variant?: "h1" | "h2" | "h3" | "lead" | "body";
     color?: "default" | "muted";
 }
 
@@ -12,6 +12,8 @@ export function SpTypo(props: SpTypoProps) {
 
     const variantStyles = {
         h1: { fontSize: 32, fontWeight: "700" },
+        h2: { fontSize: 24, fontWeight: "700" },
+        h3: { fontSize: 20, fontWeight: "600" },
         lead: { fontSize: 18, fontWeight: "400" },
         body: { fontSize: 16, fontWeight: "400" },
     } as const;
