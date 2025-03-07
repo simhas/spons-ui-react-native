@@ -17,13 +17,13 @@ export function SpCard(props: SpCardProps) {
     const variantStyles = {
         default: {
             backgroundColor: theme.colors.card,
-            borderWidth: 1,
+            borderWidth: 2,
             borderColor: theme.colors.border,
         },
         outline: {
             backgroundColor: "transparent",
-            borderWidth: 1,
-            borderColor: theme.colors.card,
+            borderWidth: 2,
+            borderColor: "#1e293b",
         },
     } as const;
 
@@ -96,5 +96,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
+        gap: 8
     },
 });
