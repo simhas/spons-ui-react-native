@@ -1,10 +1,14 @@
 export interface SpTheme {
     colors: {
-        foreground: string;
-
         primary: string;
         onPrimary: string;
-        primaryForeground: string;
+
+        secondary: string;
+        onSecondary: string;
+
+        foreground: string;
+
+
 
         muted: string;
         mutedForeground: string;
@@ -19,11 +23,13 @@ export interface SpTheme {
 //Main: #00458B
 export const defaultTheme: SpTheme = {
     colors: {
-        foreground: "#e2e2e9",
+        primary: "#A9C7FF",
+        onPrimary: "#09305F",
 
-        primary: "#a9c7ff",
-        onPrimary: "#09305f",
-        primaryForeground: "#f9fafb",
+        secondary: "#BEC7DC",
+        onSecondary: "#283141",
+
+        foreground: "#e2e2e9",
 
         muted: "#262626",
         mutedForeground: "#A3A3A6",

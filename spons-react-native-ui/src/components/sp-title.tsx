@@ -35,6 +35,10 @@ export function SpTitle({
         }
     } as const;
 
+    if (!children) {
+        return null;
+    }
+
     return (
         <View style={style} {...rest}>
             <SpTypo
