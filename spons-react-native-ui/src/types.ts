@@ -3,12 +3,11 @@ export interface SpTheme {
         foreground: string;
 
         primary: string;
+        onPrimary: string;
         primaryForeground: string;
-        primaryOnBackground: string;
 
         muted: string;
         mutedForeground: string;
-        mutedOnBackground: string;
 
         card: string
         
@@ -16,17 +15,18 @@ export interface SpTheme {
     }
 }
 
+//https://material-foundation.github.io/material-theme-builder/
+//Main: #00458B
 export const defaultTheme: SpTheme = {
     colors: {
-        foreground: "#E5E5E7",
+        foreground: "#e2e2e9",
 
-        primary: "#2563eb",
+        primary: "#a9c7ff",
+        onPrimary: "#09305f",
         primaryForeground: "#f9fafb",
-        primaryOnBackground: "#60a5fa",
 
         muted: "#262626",
         mutedForeground: "#A3A3A6",
-        mutedOnBackground: "#525252",
 
         card: "#020817",
 

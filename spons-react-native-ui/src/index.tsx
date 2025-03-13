@@ -5,6 +5,8 @@ export { SpButton } from './components/sp-button';
 export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpChip } from './components/sp-chip';
 export { SpList, SpListItem } from './components/sp-list';
+export { SpMenuItem } from './components/sp-menu';
+export { SpTitle } from './components/sp-title';
 export { SpTypo } from './components/sp-typo';
 export { LoadingView } from './views/loading-view';
 export { SignInView } from './views/sign-in-view';
