@@ -15,7 +15,6 @@ export function SpButton(props: SpButtonProps) {
 
     const getColors = (colorKey: "primary" | "muted") => ({
         foreground: theme.colors[`${colorKey}Foreground`],
-        onBackground: theme.colors[`${colorKey}OnBackground`],
         background: theme.colors[colorKey]
     })
 
@@ -33,8 +32,8 @@ export function SpButton(props: SpButtonProps) {
         },
         outlined: {
             containerColor: "transparent",
-            borderColor: colors[color].onBackground,
-            textColor: colors[color].onBackground,
+            borderColor: colors[color].background,
+            textColor: colors[color].background,
             borderWidth: 1
         }
     }
