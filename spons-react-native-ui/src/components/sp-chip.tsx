@@ -23,7 +23,7 @@ export function SpChip(props: SpChipProps) {
             {typeof children === 'string' ? (
                 <Text style={[
                     {
-                        color: theme.colors.primaryForeground,
+                        color: theme.colors.onPrimary,
                         fontSize: 12,
                         marginVertical: 6,
                         marginHorizontal: 8
