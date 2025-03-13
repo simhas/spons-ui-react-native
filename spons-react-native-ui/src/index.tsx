@@ -4,6 +4,7 @@ export { SpAvatar } from './components/sp-avatar';
 export { SpButton } from './components/sp-button';
 export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpChip } from './components/sp-chip';
+export { SpList, SpListItem } from './components/sp-list';
 export { SpTypo } from './components/sp-typo';
 export { LoadingView } from './views/loading-view';
 export { SignInView } from './views/sign-in-view';
