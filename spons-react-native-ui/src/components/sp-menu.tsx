@@ -26,9 +26,9 @@ export function SpMenuItem(props: SpMenuItemProps) {
                     padding: 16,
                     gap: 16
                 }, style]}>
-            <FontAwesome6 style={{ width: 26, height: 20 }} name={icon} size={20} color={theme.colors.mutedForeground} />
-            <SpTypo style={{ flex: 1, color: theme.colors.foreground, fontSize: 16 }}>{title}</SpTypo>
-            <FontAwesome6 name={"chevron-right"} size={14} color={theme.colors.mutedForeground} />
+            <FontAwesome6 style={{ width: 26, height: 20 }} name={icon} size={20} color={theme.colors.muted} />
+            <SpTypo style={{ flex: 1, color: theme.colors.onBackground, fontSize: 16 }}>{title}</SpTypo>
+            <FontAwesome6 name={"chevron-right"} size={14} color={theme.colors.muted} />
         </Pressable>
     )
 }

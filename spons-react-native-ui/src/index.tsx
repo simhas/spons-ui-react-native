@@ -1,6 +1,7 @@
 export * from './types';
 export { useTheme, SpThemeProvider } from './theme-provider';
 export { SpAvatar } from './components/sp-avatar';
+export { SpBoxEmpty } from './components/sp-box';
 export { SpButton } from './components/sp-button';
 export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpChip } from './components/sp-chip';
