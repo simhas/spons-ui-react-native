@@ -4,7 +4,7 @@ import { useTheme } from "../theme-provider";
 interface SpButtonProps extends PressableProps {
     isLoading?: boolean
     variant?: "default" | "outlined"
-    color?: "primary" | "secondary"
+    color?: "primary" | "secondary" | "muted"
     children?: React.ReactNode | string
     style?: StyleProp<ViewStyle>
 }
@@ -21,6 +21,10 @@ export function SpButton(props: SpButtonProps) {
         secondary: {
             foreground: theme.colors.onSecondary,
             background: theme.colors.secondary
+        },
+        muted: {
+            foreground: theme.colors.onMuted,
+            background: theme.colors.muted
         }
     }
 

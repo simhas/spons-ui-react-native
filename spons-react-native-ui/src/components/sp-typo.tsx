@@ -19,8 +19,8 @@ export function SpTypo(props: SpTypoProps) {
     } as const;
 
     const colorMapping = {
-        default: "foreground",
-        muted: "mutedForeground"
+        default: "onBackground",
+        muted: "muted"
     } as const;
 
     return <Text style={[

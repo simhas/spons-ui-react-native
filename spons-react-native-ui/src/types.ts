@@ -15,9 +15,6 @@ export interface SpTheme {
         muted: string;
         onMuted: string;
 
-        //Obsolete from here, fix later
-        foreground: string;
-        mutedForeground: string;
 
         card: string
         
@@ -27,29 +24,26 @@ export interface SpTheme {
 
 //https://material-foundation.github.io/material-theme-builder/
 //Main: #00458B
+// Background: black
+//Primary: blue
+//Secondary: white
+//Tertiary: orange
+//Muted: gray
+
 export const defaultTheme: SpTheme = {
     colors: {
         background: "#0B0A0A",
         onBackground: "#F2F2F2",
-
         primary: "#A9C7FF",
         onPrimary: "#09305F",
-
-        //TODO check vs muted
-        secondary: "#BEC7DC",
+        secondary: "#F4F4F5",
         onSecondary: "#283141",
-
         tertiary: "#ffb787",
         onTertiary: "#512400",
-
         muted: "#A3A3A6",
         onMuted:  "#262626",
 
-        //TODO remove
-        foreground: "#F2F2F2",
-        mutedForeground: "#262626",
-
-        //TODO remove
+        //TODO check
         card: "#020817",
         border: "#1e293b"
     }

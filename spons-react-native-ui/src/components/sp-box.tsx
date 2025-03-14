@@ -5,7 +5,7 @@ import { useTheme } from '../theme-provider';
 
 interface SpEmptyProps {
     title?: string;
-    message?: string | React.ReactNode;
+    message?: string;
     icon?: keyof typeof FontAwesome6.glyphMap;
 }
 
@@ -36,10 +36,8 @@ export const SpBoxEmpty = ({
             )}
             <View style={styles.textContainer}>
                 <Text style={[styles.title, { color: theme.colors.onBackground }]}>{title}</Text>
-                {typeof message === 'string' ? (
+                {message && (
                     <Text style={[styles.message, { color: theme.colors.muted }]}>{message}</Text>
-                ) : (
-                    message
                 )}
             </View>
         </Animated.View>
