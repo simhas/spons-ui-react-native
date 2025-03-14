@@ -42,8 +42,8 @@ export const defaultTheme: SpTheme = {
         tertiary: "#ffb787",
         onTertiary: "#512400",
 
-        muted: "#262626",
-        onMuted: "#A3A3A6",
+        muted: "#A3A3A6",
+        onMuted:  "#262626",
 
         //TODO remove
         foreground: "#F2F2F2",
