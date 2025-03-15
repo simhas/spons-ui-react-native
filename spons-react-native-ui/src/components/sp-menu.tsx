@@ -10,24 +10,27 @@ interface SpMenuItemProps extends ViewProps {
 
 export function SpMenuItem(props: SpMenuItemProps) {
     const theme = useTheme();
-    const { title, icon, style,onPress, ...rest } = props;
+    const { title, icon, style, onPress, ...rest } = props;
     return (
         <Pressable
             {...rest}
             onPress={onPress}
             style={({ pressed }) => [
                 {
-                    opacity: pressed ? 0.8 : 1,
-                    backgroundColor: pressed ? theme.colors.muted : undefined,
+                    transform: [{ scale: pressed ? 0.98 : 1 }],
+                    opacity: pressed ? 0.7 : 1,
+                    elevation: pressed ? 1 : 2,
+                    shadowOpacity: pressed ? 0.1 : 0.2,
+                    backgroundColor: pressed ? `${theme.colors.muted}20` : undefined,
                     flex: 1,
                     flexDirection: "row",
                     minHeight: 48,
                     alignItems: "center",
-                    padding: 16,
+                    paddingHorizontal: 16,
                     gap: 16
                 }, style]}>
             <FontAwesome6 style={{ width: 26, height: 20 }} name={icon} size={20} color={theme.colors.muted} />
-            <SpTypo style={{ flex: 1, color: theme.colors.onBackground, fontSize: 16 }}>{title}</SpTypo>
+            <SpTypo style={{ flex: 1 }}>{title}</SpTypo>
             <FontAwesome6 name={"chevron-right"} size={14} color={theme.colors.muted} />
         </Pressable>
     )

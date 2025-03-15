@@ -22,6 +22,25 @@ export interface SpTheme {
     }
 }
 
+export const lightTheme: SpTheme = {
+    colors: {
+        background: "#FFFFFF",
+        onBackground: "#0C1322",
+        primary: "#2563EB",
+        onPrimary: "#0C1322",
+        secondary: "#F1F5FB",
+        onSecondary: "#1C2536",
+        tertiary: "#6F5575",
+        onTertiary: "#FFFFFF",
+        muted: "#6B7A99",
+        onMuted: "#F1F5FB",
+
+        //TODO check
+        card: "#FFFFFF",
+        border: "#E5EAF2"
+    }
+}
+
 //https://material-foundation.github.io/material-theme-builder/
 //Main: #00458B
 // Background: black
