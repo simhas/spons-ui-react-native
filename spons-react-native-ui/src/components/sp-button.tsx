@@ -141,6 +141,5 @@ interface SpButtonIconProps extends Omit<SpButtonProps, "children"> {
 }
 
 export function SpButtonIcon(props: SpButtonIconProps) {
-    const { icon, ...rest } = props
-    return <SpButton {...rest} />
+    return <SpButton {...props} />
 }
