@@ -63,7 +63,7 @@ export function SpButton(props: SpButtonProps) {
         }
     }
 
-    const { backgroundColor, borderColor, textColor, borderWidth, borderRadius } = buttonThemes[variant]
+    const { backgroundPressed, backgroundColor, borderColor, textColor, borderWidth, borderRadius } = buttonThemes[variant]
 
     const textStyle: TextStyle = {
         color: textColor,
@@ -86,7 +86,7 @@ export function SpButton(props: SpButtonProps) {
                     opacity: pressed ? 0.7 : ((isLoading || disabled) ? 0.5 : 1),
                     elevation: pressed ? 1 : 2,
                     shadowOpacity: pressed ? 0.1 : 0.2,
-                    backgroundColor: pressed ? `${backgroundColor}20` : backgroundColor,
+                    backgroundColor: pressed ? backgroundPressed : backgroundColor,
                     minHeight: 36,
                     minWidth: 48,
                     alignItems: "center",
@@ -141,5 +141,6 @@ interface SpButtonIconProps extends Omit<SpButtonProps, "children"> {
 }
 
 export function SpButtonIcon(props: SpButtonIconProps) {
-    return <SpButton {...props} />
+    const { variant = "text", ...rest } = props
+    return <SpButton variant={variant} {...rest} />
 }
