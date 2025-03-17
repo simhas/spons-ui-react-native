@@ -1,55 +1,92 @@
-import { ActivityIndicator, Pressable, View, Text, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
+import { ActivityIndicator, Pressable, View, Text, type PressableProps, type StyleProp, type ViewStyle, type TextStyle } from "react-native";
 import { useTheme } from "../theme-provider";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome';
 
 interface SpButtonProps extends PressableProps {
     isLoading?: boolean
-    variant?: "default" | "outlined"
+    variant?: "default" | "outlined" | "rounded" | "text"
     color?: "primary" | "secondary" | "muted"
     children?: React.ReactNode | string
     style?: StyleProp<ViewStyle>
+    icon?: keyof typeof FontAwesome6.glyphMap
 }
 
 export function SpButton(props: SpButtonProps) {
-    const { children, onPress, disabled, isLoading, style, variant = "default", color = "primary" } = props
+    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "primary" } = props
     const theme = useTheme()
-    
+
     const colors = {
         primary: {
             foreground: theme.colors.onPrimary,
-            background: theme.colors.primary
+            background: theme.colors.primary,
         },
         secondary: {
             foreground: theme.colors.onSecondary,
-            background: theme.colors.secondary
+            background: theme.colors.secondary,
         },
         muted: {
             foreground: theme.colors.onMuted,
-            background: theme.colors.muted
+            background: theme.colors.muted,
         }
+    }
+
+    const defaultButtonTheme = {
+        backgroundColor: colors[color].background,
+        backgroundPressed: `${colors[color].background}20`,
+        borderColor: colors[color].background,
+        textColor: colors[color].foreground,
+        borderWidth: 1,
+        borderRadius: 2
     }
 
     const buttonThemes = {
         default: {
-            containerColor: colors[color].background,
-            borderColor: colors[color].background,
-            textColor: colors[color].foreground,
-            borderWidth: 0
+            ...defaultButtonTheme
         },
         outlined: {
-            containerColor: "transparent",
+            ...defaultButtonTheme,
+            backgroundColor: "transparent",
+            backgroundPressed: "transparent",
             borderColor: colors[color].background,
             textColor: colors[color].background,
-            borderWidth: 1
+        },
+        rounded: {
+            ...defaultButtonTheme,
+            borderRadius: 24
+        },
+        text: {
+            ...defaultButtonTheme,
+            backgroundColor: "transparent",
+            backgroundPressed: "transparent",
+            borderColor: "transparent",
+            textColor: colors[color].background
         }
     }
 
-    const { containerColor, borderColor, textColor, borderWidth } = buttonThemes[variant]
+    const { backgroundColor, borderColor, textColor, borderWidth, borderRadius } = buttonThemes[variant]
+
+    const textStyle: TextStyle = {
+        color: textColor,
+        fontSize: 14,
+        fontWeight: "500"
+    }
+
+    const content =
+        typeof children === 'string' ? (
+            <Text style={textStyle}>{children}</Text>
+        ) : (
+            children
+        );
 
     return (
         <Pressable
             style={({ pressed }) => [
                 {
-                    opacity: pressed ? 0.8 : ((isLoading || disabled) ? 0.5 : 1),
+                    transform: [{ scale: pressed ? 0.98 : 1 }],
+                    opacity: pressed ? 0.7 : ((isLoading || disabled) ? 0.5 : 1),
+                    elevation: pressed ? 1 : 2,
+                    shadowOpacity: pressed ? 0.1 : 0.2,
+                    backgroundColor: pressed ? `${backgroundColor}20` : backgroundColor,
                     minHeight: 36,
                     minWidth: 48,
                     alignItems: "center",
@@ -57,13 +94,12 @@ export function SpButton(props: SpButtonProps) {
                     flexDirection: "row",
                     borderColor: borderColor,
                     borderWidth: borderWidth,
-                    backgroundColor: containerColor,
                     position: "relative",
                     justifyContent: "center",
                     paddingHorizontal: 16,
                     paddingVertical: 8,
                     gap: 8,
-                    borderRadius: 2
+                    borderRadius: borderRadius
                 },
                 style
             ]}
@@ -71,17 +107,8 @@ export function SpButton(props: SpButtonProps) {
             onPress={onPress}
             disabled={isLoading || disabled}
         >
-            {typeof children === 'string' ? (
-                <Text style={{
-                    color: textColor,
-                    fontSize: 14,
-                    fontWeight: "500"
-                }}>
-                    {children}
-                </Text>
-            ) : (
-                children
-            )}
+            {icon && <FontAwesome6 name={icon} size={24} color={textColor} />}
+            {content}
             {isLoading && (
                 <View style={{
                     position: "absolute",
@@ -96,4 +123,24 @@ export function SpButton(props: SpButtonProps) {
 
         </Pressable>
     )
+}
+
+interface SpButtonTextProps extends Omit<SpButtonProps, "children"> {
+    title?: string
+}
+
+export function SpButtonText(props: SpButtonTextProps) {
+    const { title, ...rest } = props
+    return <SpButton {...rest}>
+        {title}
+    </SpButton>
+}
+
+interface SpButtonIconProps extends Omit<SpButtonProps, "children"> {
+    icon: keyof typeof FontAwesome6.glyphMap;
+}
+
+export function SpButtonIcon(props: SpButtonIconProps) {
+    const { icon, ...rest } = props
+    return <SpButton {...rest} />
 }
