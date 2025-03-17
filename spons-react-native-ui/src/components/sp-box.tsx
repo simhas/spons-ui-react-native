@@ -1,4 +1,4 @@
-import FontAwesome6 from '@expo/vector-icons/FontAwesome';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useEffect, useRef } from "react";
 import { View, Text, StyleSheet, Animated } from 'react-native';
 import { useTheme } from '../theme-provider';

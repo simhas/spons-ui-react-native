@@ -1,6 +1,6 @@
 import { View, ImageBackground, Pressable, StyleSheet, type ImageSourcePropType } from "react-native";
 import { SpTypo } from '../components/sp-typo';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useTheme } from '../theme-provider';
 
 interface SignInViewProps {

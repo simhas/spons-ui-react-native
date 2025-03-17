@@ -1,6 +1,6 @@
 import { Pressable, type ViewProps } from 'react-native';
 import { SpTypo, useTheme } from 'spons-react-native-ui';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 interface SpMenuItemProps extends ViewProps {
     title: string;

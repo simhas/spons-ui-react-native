@@ -1,6 +1,6 @@
 import { ActivityIndicator, Pressable, View, Text, type PressableProps, type StyleProp, type ViewStyle, type TextStyle } from "react-native";
 import { useTheme } from "../theme-provider";
-import FontAwesome6 from '@expo/vector-icons/FontAwesome';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 interface SpButtonProps extends PressableProps {
     isLoading?: boolean
@@ -134,7 +134,7 @@ export function SpButton(props: SpButtonProps) {
                         color={textColor} />
                 </View>
             )}
-
+<FontAwesome6 name="location-crosshairs" size={24} color="black" />
         </Pressable>
     )
 }

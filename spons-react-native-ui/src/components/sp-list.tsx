@@ -1,6 +1,6 @@
 import { View, type ViewProps } from "react-native";
 import { SpAvatar, SpTypo } from "spons-react-native-ui";
-import FontAwesome6 from '@expo/vector-icons/FontAwesome';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 export function SpList(props: ViewProps) {
     return <View {...props} />
