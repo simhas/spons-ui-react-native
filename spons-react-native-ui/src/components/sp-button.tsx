@@ -12,7 +12,7 @@ interface SpButtonProps extends PressableProps {
 }
 
 export function SpButton(props: SpButtonProps) {
-    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "primary" } = props
+    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "primary", ...rest } = props
     const theme = useTheme()
 
     const colors = {
@@ -93,6 +93,7 @@ export function SpButton(props: SpButtonProps) {
 
     return (
         <Pressable
+            {...rest}
             style={({ pressed }) => [
                 {
                     transform: [{ scale: pressed ? 0.98 : 1 }],
@@ -154,6 +155,6 @@ interface SpButtonIconProps extends Omit<SpButtonProps, "children"> {
 }
 
 export function SpButtonIcon(props: SpButtonIconProps) {
-    const { variant = "text", ...rest } = props
-    return <SpButton variant={variant} {...rest} />
+    const { variant = "text", color = "secondary", ...rest } = props
+    return <SpButton variant={variant} color={color} {...rest} />
 }

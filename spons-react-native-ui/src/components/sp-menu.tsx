@@ -19,7 +19,7 @@ export function SpMenuItem(props: SpMenuItemProps) {
                 {
                     transform: [{ scale: pressed ? 0.98 : 1 }],
                     opacity: pressed ? 0.7 : 1,
-                    elevation: pressed ? 1 : 2,
+                    elevation: 0, //pressed ? 1 : 2,
                     shadowOpacity: pressed ? 0.1 : 0.2,
                     backgroundColor: pressed ? `${theme.colors.muted}20` : undefined,
                     flex: 1,
