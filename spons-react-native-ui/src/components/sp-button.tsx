@@ -67,12 +67,12 @@ export function SpButton(props: SpButtonProps) {
         }
     }
 
-    const { 
-        backgroundPressed, 
-        backgroundColor, 
-        borderColor, 
-        textColor, 
-        borderWidth, 
+    const {
+        backgroundPressed,
+        backgroundColor,
+        borderColor,
+        textColor,
+        borderWidth,
         borderRadius,
         elevation,
         elevationPressed
@@ -134,7 +134,6 @@ export function SpButton(props: SpButtonProps) {
                         color={textColor} />
                 </View>
             )}
-<FontAwesome6 name="location-crosshairs" size={24} color="black" />
         </Pressable>
     )
 }
