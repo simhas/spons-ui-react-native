@@ -6,24 +6,36 @@ import { useTheme } from "../theme-provider";
 interface SpCardProps extends ViewProps {
     style?: StyleProp<ViewStyle>;
     variant?: "default" | "outline";
+    color?: "default" | "secondary";
     onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
 }
 
 export function SpCard(props: SpCardProps) {
-    const { children, style, onPress, variant = "default", ...rest } = props;
+    const { children, style, onPress, variant = "default", color = "default", ...rest } = props;
 
     const theme = useTheme();
 
+    const colors = {
+        default: {
+            border: theme.colors.border,
+            background: theme.colors.card,
+        },
+        secondary: {
+            border: theme.colors.border,
+            background: theme.colors.secondary,
+        }
+    }
+
     const variantStyles = {
         default: {
-            backgroundColor: theme.colors.card,
+            backgroundColor: colors[color].background,
             borderWidth: 1,
-            borderColor: theme.colors.border,
+            borderColor: colors[color].border
         },
         outline: {
             backgroundColor: "transparent",
             borderWidth: 1,
-            borderColor: theme.colors.primary
+            borderColor: colors[color].border,
         },
     } as const;
     

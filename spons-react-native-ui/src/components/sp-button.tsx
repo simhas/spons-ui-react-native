@@ -5,17 +5,21 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 interface SpButtonProps extends PressableProps {
     isLoading?: boolean
     variant?: "default" | "outlined" | "rounded" | "text"
-    color?: "primary" | "secondary" | "muted"
+    color?: "default" | "primary" | "secondary" | "muted"
     children?: React.ReactNode | string
     style?: StyleProp<ViewStyle>
     icon?: keyof typeof FontAwesome6.glyphMap
 }
 
 export function SpButton(props: SpButtonProps) {
-    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "primary", ...rest } = props
+    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "default", ...rest } = props
     const theme = useTheme()
 
     const colors = {
+        default: {
+            foreground: theme.colors.onBackground,
+            background: theme.colors.background,
+        },
         primary: {
             foreground: theme.colors.onPrimary,
             background: theme.colors.primary,
