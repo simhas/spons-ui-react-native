@@ -66,7 +66,7 @@ export function SpCard(props: SpCardProps) {
                     marginLeft: -4,
                 },
                 style,
-                { opacity: pressed ? 0.8 : 1 }
+                { opacity: pressed ? 0.8 : 1, transform: [{ scale: pressed ? 0.98 : 1 }] }
             ]}
             onPress={onPress}
             {...rest}

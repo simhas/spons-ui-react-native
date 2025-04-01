@@ -28,7 +28,8 @@ export function SpChip(props: SpChipProps) {
                 backgroundColor: variantStyles[variant].backgroundColor,
                 justifyContent: "center",
                 paddingVertical: 4,
-                overflow: 'hidden',
+                paddingHorizontal: 12,
+                borderRadius: 16,
             },
             style
         ]}
@@ -38,9 +39,7 @@ export function SpChip(props: SpChipProps) {
                     {
                         color: variantStyles[variant].textColor,
                         fontSize: 14,
-                        fontWeight: '600',
-                        marginVertical: 6,
-                        marginHorizontal: 8
+                        fontWeight: '600'
                     },
                     textStyle
                 ]}>
