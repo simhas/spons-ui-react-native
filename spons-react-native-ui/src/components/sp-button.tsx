@@ -9,10 +9,11 @@ interface SpButtonProps extends PressableProps {
     children?: React.ReactNode | string
     style?: StyleProp<ViewStyle>
     icon?: keyof typeof FontAwesome6.glyphMap
+    title?: string
 }
 
 export function SpButton(props: SpButtonProps) {
-    const { icon, children, onPress, disabled, isLoading, style, variant = "default", color = "default", ...rest } = props
+    const { title, icon, children, onPress, disabled, isLoading, style, variant = "default", color = "default", ...rest } = props
     const theme = useTheme()
 
     const colors = {
@@ -105,8 +106,8 @@ export function SpButton(props: SpButtonProps) {
                     elevation: pressed ? elevationPressed : elevation,
                     shadowOpacity: pressed ? 0.1 : 0.2,
                     backgroundColor: pressed ? backgroundPressed : backgroundColor,
-                    minHeight: 36,
-                    minWidth: 48,
+                    minHeight: 40,
+                    minWidth: 40,
                     alignItems: "center",
                     display: "flex",
                     flexDirection: "row",
@@ -114,8 +115,8 @@ export function SpButton(props: SpButtonProps) {
                     borderWidth: borderWidth,
                     position: "relative",
                     justifyContent: "center",
-                    paddingHorizontal: 16,
-                    paddingVertical: 8,
+                    //paddingHorizontal: 16,
+                    paddingVertical: (children || title) ? 8 : 0,
                     gap: 8,
                     borderRadius: borderRadius
                 },
@@ -126,6 +127,7 @@ export function SpButton(props: SpButtonProps) {
             disabled={isLoading || disabled}
         >
             {icon && <FontAwesome6 name={icon} size={24} color={textColor} />}
+            {title && <Text style={textStyle}>{title}</Text>}
             {content}
             {isLoading && (
                 <View style={{

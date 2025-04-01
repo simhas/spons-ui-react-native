@@ -21,7 +21,7 @@ export function SpCard(props: SpCardProps) {
             background: theme.colors.card,
         },
         secondary: {
-            border: theme.colors.border,
+            border: theme.colors.secondary,
             background: theme.colors.secondary,
         }
     }
