@@ -61,7 +61,7 @@ export function SpCard(props: SpCardProps) {
                 styles.card,
                 variantStyles[variant],
                 active && {
-                    borderLeftColor: theme.colors.primary,
+                    borderColor: theme.colors.primary,
                     borderLeftWidth: 4,
                     marginLeft: -4,
                 },
