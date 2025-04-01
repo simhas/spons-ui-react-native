@@ -8,10 +8,11 @@ interface SpCardProps extends ViewProps {
     variant?: "default" | "outline";
     color?: "default" | "secondary";
     onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
+    active?: boolean;
 }
 
 export function SpCard(props: SpCardProps) {
-    const { children, style, onPress, variant = "default", color = "default", ...rest } = props;
+    const { active, children, style, onPress, variant = "default", color = "default", ...rest } = props;
 
     const theme = useTheme();
 
@@ -59,6 +60,11 @@ export function SpCard(props: SpCardProps) {
             style={({ pressed }) => [
                 styles.card,
                 variantStyles[variant],
+                active && {
+                    borderLeftColor: theme.colors.primary,
+                    borderLeftWidth: 4,
+                    marginLeft: -4,
+                },
                 style,
                 { opacity: pressed ? 0.8 : 1 }
             ]}
@@ -99,7 +105,7 @@ export function SpCardContent(props: ViewProps) {
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius: 12,
+        borderRadius: 6,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,

@@ -59,7 +59,7 @@ export function SpButton(props: SpButtonProps) {
         },
         rounded: {
             ...defaultButtonTheme,
-            borderRadius: 24
+            borderRadius: 8
         },
         text: {
             ...defaultButtonTheme,
@@ -115,8 +115,8 @@ export function SpButton(props: SpButtonProps) {
                     borderWidth: borderWidth,
                     position: "relative",
                     justifyContent: "center",
-                    //paddingHorizontal: 16,
-                    paddingVertical: (children || title) ? 8 : 0,
+                    paddingHorizontal: (children || title) ? 16 : 0,
+                    //paddingVertical: (children || title) ? 8 : 0,
                     gap: 8,
                     borderRadius: borderRadius
                 },
@@ -126,7 +126,7 @@ export function SpButton(props: SpButtonProps) {
             onPress={onPress}
             disabled={isLoading || disabled}
         >
-            {icon && <FontAwesome6 name={icon} size={24} color={textColor} />}
+            {icon && <FontAwesome6 name={icon} size={20} color={textColor} />}
             {title && <Text style={textStyle}>{title}</Text>}
             {content}
             {isLoading && (
