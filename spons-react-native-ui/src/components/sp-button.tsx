@@ -20,18 +20,22 @@ export function SpButton(props: SpButtonProps) {
         default: {
             foreground: theme.colors.onBackground,
             background: theme.colors.background,
+            root: theme.colors.onBackground,
         },
         primary: {
             foreground: theme.colors.onPrimary,
             background: theme.colors.primary,
+            root: theme.colors.primary,
         },
         secondary: {
             foreground: theme.colors.onSecondary,
             background: theme.colors.secondary,
+            root: theme.colors.secondary,
         },
         muted: {
             foreground: theme.colors.onMuted,
             background: theme.colors.muted,
+            root: theme.colors.muted,
         }
     }
 
@@ -54,19 +58,19 @@ export function SpButton(props: SpButtonProps) {
             ...defaultButtonTheme,
             backgroundColor: "transparent",
             backgroundPressed: "transparent",
-            borderColor: colors[color].background,
-            textColor: colors[color].background,
+            borderColor: colors[color].root,
+            textColor: colors[color].root,
         },
         rounded: {
             ...defaultButtonTheme,
-            borderRadius: 8
+            borderRadius: 24
         },
         text: {
             ...defaultButtonTheme,
             backgroundColor: "transparent",
             backgroundPressed: "transparent",
             borderColor: "transparent",
-            textColor: colors[color].background,
+            textColor: colors[color].root,
             elevation: 0,
             elevationPressed: 0,
         }

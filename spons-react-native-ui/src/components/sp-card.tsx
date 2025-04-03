@@ -46,6 +46,10 @@ export function SpCard(props: SpCardProps) {
                 style={[
                     styles.card,
                     variantStyles[variant],
+                    active && {
+                        borderColor: theme.colors.primary,
+                        borderLeftWidth: 4
+                    },
                     style
                 ]}
                 {...rest}
@@ -62,8 +66,7 @@ export function SpCard(props: SpCardProps) {
                 variantStyles[variant],
                 active && {
                     borderColor: theme.colors.primary,
-                    borderLeftWidth: 4,
-                    marginLeft: -4,
+                    borderLeftWidth: 4
                 },
                 style,
                 { opacity: pressed ? 0.8 : 1, transform: [{ scale: pressed ? 0.98 : 1 }] }
