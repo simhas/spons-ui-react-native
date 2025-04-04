@@ -45,9 +45,7 @@ export function SpButton(props: SpButtonProps) {
         borderColor: colors[color].background,
         textColor: colors[color].foreground,
         borderWidth: 1,
-        borderRadius: 2,
-        elevation: 1,
-        elevationPressed: 2,
+        borderRadius: 2
     }
 
     const buttonThemes = {
@@ -60,6 +58,7 @@ export function SpButton(props: SpButtonProps) {
             backgroundPressed: "transparent",
             borderColor: colors[color].root,
             textColor: colors[color].root,
+            borderRadius: 8
         },
         rounded: {
             ...defaultButtonTheme,
@@ -83,8 +82,6 @@ export function SpButton(props: SpButtonProps) {
         textColor,
         borderWidth,
         borderRadius,
-        elevation,
-        elevationPressed
     } = buttonThemes[variant]
 
     const textStyle: TextStyle = {
@@ -107,7 +104,7 @@ export function SpButton(props: SpButtonProps) {
                 {
                     transform: [{ scale: pressed ? 0.98 : 1 }],
                     opacity: pressed ? 0.7 : ((isLoading || disabled) ? 0.5 : 1),
-                    elevation: pressed ? elevationPressed : elevation,
+                    //elevation: pressed ? elevationPressed : elevation,
                     shadowOpacity: pressed ? 0.1 : 0.2,
                     backgroundColor: pressed ? backgroundPressed : backgroundColor,
                     minHeight: 40,

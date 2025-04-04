@@ -15,6 +15,8 @@ export interface SpTheme {
         muted: string;
         onMuted: string;
 
+        warning: string;
+        onWarning: string;
 
         card: string
         
@@ -34,6 +36,9 @@ export const lightTheme: SpTheme = {
         onTertiary: "#FFFFFF",
         muted: "#6B7A99",
         onMuted: "#F1F5FB",
+
+        warning: "#ed6c02",
+        onWarning: "#FFFFFF",
 
         //TODO check
         card: "#FFFFFF",
@@ -61,6 +66,9 @@ export const defaultTheme: SpTheme = {
         onTertiary: "#512400",
         muted: "#A3A3A6",
         onMuted:  "#262626",
+
+        warning: "#ffa726",
+        onWarning: "rgba(0, 0, 0, 0.87)",
 
         //TODO check
         card: "#020817",
