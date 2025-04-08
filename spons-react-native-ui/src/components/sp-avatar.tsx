@@ -1,14 +1,20 @@
 import { Image } from 'expo-image';
 
 interface SpAvatarProps {
-    url?: string
+    url?: string | null
     name?: string
     size?: number
+    backgroundColor?: string | null
 }
 
 export function SpAvatar(props: SpAvatarProps) {
-    const { url = null, name = "", size = 48 } = props
+    const { url = null, name = "", size = 48, backgroundColor = null } = props
+
     var uri = url ? url : `https://api.dicebear.com/9.x/initials/svg?seed=${name}&backgroundType=solid,gradientLinear&scale=80`;
+
+    if (backgroundColor != null && url == null) {
+        uri = uri + `&backgroundColor=${backgroundColor}`;
+    }
 
     return (
         <Image
