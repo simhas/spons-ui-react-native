@@ -30,7 +30,7 @@ export function SpCard(props: SpCardProps) {
     const variantStyles = {
         default: {
             backgroundColor: colors[color].background,
-            borderWidth: 1,
+            borderWidth: 0,
             borderColor: colors[color].border
         },
         outline: {
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.1,
         shadowRadius: 4,
-        elevation: 3,
+        elevation: 0,
         gap: 8
     },
 });
