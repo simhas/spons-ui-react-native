@@ -1,6 +1,5 @@
 import { Image } from 'expo-image';
 import { View, Text } from 'react-native';
-import { useTheme } from '../theme-provider';
 
 interface SpAvatarProps {
     url?: string | null
@@ -11,7 +10,6 @@ interface SpAvatarProps {
 
 export function SpAvatar(props: SpAvatarProps) {
 
-    const theme = useTheme();
     const { url = null, name = "", size = 48, backgroundColor = null } = props
 
     function getColorFromText(text: string) {
@@ -32,7 +30,7 @@ export function SpAvatar(props: SpAvatarProps) {
                     alignItems: 'center'
                 }}
             >
-                <Text style={{ color: theme.colors.background, fontSize: 18, fontWeight: '600' }}>
+                <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: '600' }}>
                     {name.substring(0, 2).toUpperCase()}
                 </Text>
             </View>
