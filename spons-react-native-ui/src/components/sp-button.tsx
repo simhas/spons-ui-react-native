@@ -105,7 +105,7 @@ export function SpButton(props: SpButtonProps) {
                     transform: [{ scale: pressed ? 0.98 : 1 }],
                     opacity: pressed ? 0.7 : ((isLoading || disabled) ? 0.5 : 1),
                     //elevation: pressed ? elevationPressed : elevation,
-                    shadowOpacity: pressed ? 0.1 : 0.2,
+                    shadowOpacity: 0.1,
                     backgroundColor: pressed ? backgroundPressed : backgroundColor,
                     minHeight: 40,
                     minWidth: 40,
