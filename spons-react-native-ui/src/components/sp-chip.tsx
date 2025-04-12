@@ -4,21 +4,33 @@ import { useTheme } from "../theme-provider";
 interface SpChipProps extends ViewProps {
     textStyle?: TextStyle
     variant?: "default" | "soft"
+    color?: "primary" | "secondary"
 }
 
 export function SpChip(props: SpChipProps) {
-    const { children, style, textStyle, variant = "default", ...rest } = props;
+    const { children, style, textStyle, variant = "default", color = "primary", ...rest } = props;
 
     const theme = useTheme()
 
+    const colors = {
+        primary: {
+            background: theme.colors.primary,
+            text: theme.colors.onPrimary,
+        },
+        secondary: {
+            background: theme.colors.secondary,
+            text: theme.colors.onSecondary,
+        }
+    };
+
     const variantStyles = {
         default: {
-            backgroundColor: theme.colors.primary,
-            textColor: theme.colors.onPrimary,
+            backgroundColor: colors[color].background,
+            textColor: colors[color].text,
         },
         soft: {
-            backgroundColor: theme.colors.primary + "20",
-            textColor: theme.colors.primary
+            backgroundColor: colors[color].background + "20",
+            textColor: colors[color].text
         },
     };
 
