@@ -41,7 +41,7 @@ export function SpButton(props: SpButtonProps) {
 
     const defaultButtonTheme = {
         backgroundColor: colors[color].background,
-        backgroundPressed: `${colors[color].background}20`,
+        backgroundPressed: `${colors[color].background}BB`,
         borderColor: colors[color].background,
         textColor: colors[color].foreground,
         borderWidth: 1,

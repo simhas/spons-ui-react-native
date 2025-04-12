@@ -21,6 +21,14 @@ export interface SpTheme {
         card: string
         
         border: string
+
+        //Blue
+        chart1: string;
+
+        //Green
+        //Red
+        //Orange
+        
     }
 }
 
@@ -42,7 +50,9 @@ export const lightTheme: SpTheme = {
 
         //TODO check
         card: "#FFFFFF",
-        border: "#E5EAF2"
+        border: "#E5EAF2",
+
+        chart1: "#035c8f"
     }
 }
 
@@ -72,7 +82,9 @@ export const defaultTheme: SpTheme = {
 
         //TODO check
         card: "#020817",
-        border: "#1e293b"
+        border: "#1e293b",
+
+        chart1: "#0284c7",
     }
 }
 
