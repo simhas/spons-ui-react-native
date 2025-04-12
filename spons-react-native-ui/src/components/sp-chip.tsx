@@ -29,7 +29,7 @@ export function SpChip(props: SpChipProps) {
             textColor: colors[color].text,
         },
         soft: {
-            backgroundColor: colors[color].background + "20",
+            backgroundColor: colors[color].text + "20",
             textColor: colors[color].text
         },
     };
