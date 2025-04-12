@@ -24,6 +24,9 @@ export interface SpTheme {
 
         //Blue
         chart1: string;
+        chart2: string;
+        chart3: string;
+        chart4: string;
 
         //Green
         //Red
@@ -52,7 +55,10 @@ export const lightTheme: SpTheme = {
         card: "#FFFFFF",
         border: "#E5EAF2",
 
-        chart1: "#035c8f"
+        chart1: "#0284c7",
+        chart2: "#16a34a",
+        chart3: "#ca8a04",
+        chart4: "#dc2626"
     }
 }
 
@@ -84,7 +90,10 @@ export const defaultTheme: SpTheme = {
         card: "#020817",
         border: "#1e293b",
 
-        chart1: "#0284c7",
+        chart1: "#38bdf8",
+        chart2: "#4ade80",
+        chart3: "#fcd34d",
+        chart4: "#f87171"
     }
 }
 
