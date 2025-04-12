@@ -1,4 +1,4 @@
-import type { GestureResponderEvent, TextProps, ViewStyle } from "react-native";
+import type { GestureResponderEvent, ViewStyle } from "react-native";
 import type { StyleProp, ViewProps } from "react-native";
 import { Pressable, StyleSheet, View } from "react-native";
 import { useTheme } from "../theme-provider";
