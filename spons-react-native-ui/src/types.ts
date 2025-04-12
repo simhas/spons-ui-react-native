@@ -18,8 +18,12 @@ export interface SpTheme {
         warning: string;
         onWarning: string;
 
+        error: string;
+        onError: string;
+
         card: string
-        
+        onCard: string
+
         border: string
 
         //Blue
@@ -51,8 +55,12 @@ export const lightTheme: SpTheme = {
         warning: "#ed6c02",
         onWarning: "#FFFFFF",
 
+        error: "#dc2626",
+        onError: "#FFFFFF",
+
         //TODO check
         card: "#FFFFFF",
+        onCard: "#0C1322",
         border: "#E5EAF2",
 
         chart1: "#0284c7",
@@ -86,8 +94,12 @@ export const defaultTheme: SpTheme = {
         warning: "#ffa726",
         onWarning: "rgba(0, 0, 0, 0.87)",
 
+        error: "#b91c1c",
+        onError: "#F2F2F2",
+
         //TODO check
         card: "#020817",
+        onCard: "#F2F2F2",
         border: "#1e293b",
 
         chart1: "#38bdf8",

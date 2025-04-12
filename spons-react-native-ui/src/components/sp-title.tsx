@@ -42,6 +42,7 @@ export function SpTitle({
     return (
         <View style={style} {...rest}>
             <SpTypo
+                numberOfLines={1}
                 style={{
                     fontSize: sizeStyles[size].fontSize,
                     lineHeight: sizeStyles[size].lineHeight,
