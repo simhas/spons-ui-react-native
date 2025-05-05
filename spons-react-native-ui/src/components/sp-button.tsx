@@ -128,7 +128,7 @@ export function SpButton(props: SpButtonProps) {
             disabled={isLoading || disabled}
         >
             {icon && <FontAwesome6 name={icon} size={20} color={textColor} />}
-            {title && <Text style={textStyle}>{title}</Text>}
+            {title && <Text numberOfLines={1} style={textStyle}>{title}</Text>}
             {content}
             {isLoading && (
                 <View style={{
