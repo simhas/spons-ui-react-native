@@ -6,6 +6,7 @@ export { SpButton, SpButtonIcon, SpButtonText } from './components/sp-button';
 export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpChip } from './components/sp-chip';
 export { SpDot } from './components/sp-dot';
+export { SpInputDisplay, SpInputDisplayGroup } from './components/sp-input-display';
 export { SpList, SpListItem } from './components/sp-list';
 export { SpMenuItem } from './components/sp-menu';
 export { SpTabBarIcon } from './components/sp-tab-bar';
