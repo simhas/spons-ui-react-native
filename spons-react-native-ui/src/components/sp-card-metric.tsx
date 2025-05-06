@@ -8,9 +8,10 @@ interface SpCardMetricProps {
     variant?: 'default' | 'soft';
     appearance?: 'default' | 'inverted';
     color?: "default" | "primary" | "secondary" | "error" | "warning" | "card" | "chart1" | "chart2" | "chart3" | "chart4" ;
+    colorText?: string;
 }
 
-export const SpCardMetric = ({ title, text, color = 'default', variant = 'default', appearance = 'default' }: SpCardMetricProps) => {
+export const SpCardMetric = ({ title, text, colorText, color = 'default', variant = 'default', appearance = 'default' }: SpCardMetricProps) => {
     const theme = useTheme();
 
     const colors = {
@@ -44,13 +45,11 @@ export const SpCardMetric = ({ title, text, color = 'default', variant = 'defaul
             softBackground: theme.colors.warning + "30",
             softText: theme.colors.warning + "EE"
         },
-        
-        
         card: {
             background: theme.colors.card,
-            text: theme.colors.onCard,
+            text: theme.colors.muted,
             softBackground: theme.colors.card,
-            softText: theme.colors.onCard
+            softText: theme.colors.muted
         }, 
         chart1: {
             background: theme.colors.chart1,
@@ -104,7 +103,7 @@ export const SpCardMetric = ({ title, text, color = 'default', variant = 'defaul
         const textElement = (
             <Text numberOfLines={1} style={[
                 styles.text,
-                { color: variantStyles[variant].textColor }
+                { color: colorText || variantStyles[variant].textColor }
             ]}>
                 {text}
             </Text>
