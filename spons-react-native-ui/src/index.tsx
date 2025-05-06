@@ -3,6 +3,7 @@ export { useTheme, SpThemeProvider } from './theme-provider';
 export { SpAvatar } from './components/sp-avatar';
 export { SpBoxEmpty } from './components/sp-box';
 export { SpButton, SpButtonIcon, SpButtonText } from './components/sp-button';
+export { SpCardMetric, SpCardMetricGrid } from './components/sp-card-metric';
 export { SpCard, SpCardHeader, SpCardContent } from './components/sp-card';
 export { SpChip } from './components/sp-chip';
 export { SpDot } from './components/sp-dot';

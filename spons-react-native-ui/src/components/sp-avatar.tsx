@@ -30,7 +30,7 @@ export function SpAvatar(props: SpAvatarProps) {
                     alignItems: 'center'
                 }}
             >
-                <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: '600' }}>
+                <Text style={{ color: "#FFFFFF", fontSize: size >= 80 ? 34 : 18, fontWeight: '600' }}>
                     {name.substring(0, 2).toUpperCase()}
                 </Text>
             </View>

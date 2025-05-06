@@ -5,7 +5,7 @@ import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 interface SpButtonProps extends PressableProps {
     isLoading?: boolean
     variant?: "default" | "outlined" | "rounded" | "text"
-    color?: "default" | "primary" | "secondary" | "muted"
+    color?: "default" | "primary" | "secondary" | "muted" | "error"
     children?: React.ReactNode | string
     style?: StyleProp<ViewStyle>
     icon?: keyof typeof FontAwesome6.glyphMap
@@ -36,6 +36,11 @@ export function SpButton(props: SpButtonProps) {
             foreground: theme.colors.onMuted,
             background: theme.colors.muted,
             root: theme.colors.muted,
+        },
+        error: {
+            foreground: theme.colors.onError,
+            background: theme.colors.error,
+            root: theme.colors.error,
         }
     }
 
