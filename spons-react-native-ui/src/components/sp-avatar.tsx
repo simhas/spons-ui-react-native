@@ -18,6 +18,16 @@ export function SpAvatar(props: SpAvatarProps) {
         return `hsl(${hue}, 100%, 35%)`;
     }
 
+    function getFontSizeFromSize(size: number) {
+        if (size >= 80) {
+            return 34
+        }
+        if (size <= 28) {
+            return 12
+        }
+        return 18
+    }
+
     if (url == null) {
         return (
             <View
@@ -30,7 +40,7 @@ export function SpAvatar(props: SpAvatarProps) {
                     alignItems: 'center'
                 }}
             >
-                <Text style={{ color: "#FFFFFF", fontSize: size >= 80 ? 34 : 18, fontWeight: '600' }}>
+                <Text style={{ color: "#FFFFFF", fontSize: getFontSizeFromSize(size), fontWeight: '600' }}>
                     {name.substring(0, 2).toUpperCase()}
                 </Text>
             </View>

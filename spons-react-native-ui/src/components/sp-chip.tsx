@@ -1,14 +1,16 @@
 import { View, Text, type ViewProps, type TextStyle } from "react-native";
 import { useTheme } from "../theme-provider";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 interface SpChipProps extends ViewProps {
     textStyle?: TextStyle
     variant?: "default" | "soft"
-    color?: "primary" | "secondary"
+    color?: "primary" | "secondary" | "tertiary" | "error" | "warning"
+    icon?: keyof typeof FontAwesome6.glyphMap
 }
 
 export function SpChip(props: SpChipProps) {
-    const { children, style, textStyle, variant = "default", color = "primary", ...rest } = props;
+    const { children, style, textStyle, variant = "default", color = "primary", icon, ...rest } = props;
 
     const theme = useTheme()
 
@@ -20,6 +22,18 @@ export function SpChip(props: SpChipProps) {
         secondary: {
             background: theme.colors.secondary,
             text: theme.colors.onSecondary,
+        },
+        tertiary: {
+            background: theme.colors.tertiary,
+            text: theme.colors.onTertiary,
+        },
+        error: {
+            background: theme.colors.error,
+            text: theme.colors.onError,
+        },
+        warning: {
+            background: theme.colors.warning,
+            text: theme.colors.onWarning,
         }
     };
 
@@ -42,10 +56,16 @@ export function SpChip(props: SpChipProps) {
                 paddingVertical: 4,
                 paddingHorizontal: 12,
                 borderRadius: 16,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 4
             },
             style
         ]}
             {...rest}>
+            {icon && (
+                <FontAwesome6 name={icon} size={12} color={variantStyles[variant].textColor} />
+            )}
             {typeof children === 'string' ? (
                 <Text style={[
                     {
