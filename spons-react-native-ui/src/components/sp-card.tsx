@@ -5,7 +5,7 @@ import { useTheme } from "../theme-provider";
 
 interface SpCardProps extends ViewProps {
     style?: StyleProp<ViewStyle>;
-    variant?: "default" | "outline";
+    variant?: "default" | "outline" | "none";
     color?: "default" | "secondary";
     onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
     active?: boolean;
@@ -24,6 +24,10 @@ export function SpCard(props: SpCardProps) {
         secondary: {
             border: theme.colors.secondary,
             background: theme.colors.secondary,
+        },
+        none: {
+            border: "transparent",
+            background: "transparent",
         }
     }
 
@@ -37,6 +41,11 @@ export function SpCard(props: SpCardProps) {
             backgroundColor: "transparent",
             borderWidth: 1,
             borderColor: colors[color].border,
+        },
+        none: {
+            backgroundColor: "transparent",
+            borderWidth: 0,
+            borderColor: "transparent",
         },
     } as const;
     

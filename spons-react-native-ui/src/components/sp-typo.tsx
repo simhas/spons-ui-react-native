@@ -2,7 +2,7 @@ import { Text, type TextProps } from "react-native";
 import { useTheme } from '../theme-provider';
 
 interface SpTypoProps extends TextProps {
-    variant?: "h1" | "h2" | "h3" | "lead" | "body" | "small" | "cardTitle";
+    variant?: "h1" | "h2" | "h3" | "lead" | "body" | "small" | "xs" | "cardTitle";
     color?: "default" | "muted";
 }
 
@@ -17,6 +17,7 @@ export function SpTypo(props: SpTypoProps) {
         lead: { fontSize: 18, fontWeight: "400" },
         body: { fontSize: 16, fontWeight: "400" },
         small: { fontSize: 14, fontWeight: "400" },
+        xs: { fontSize: 12, fontWeight: "400" },
         cardTitle: { fontSize: 16, fontWeight: "600" },
     } as const;
 
