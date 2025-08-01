@@ -2,6 +2,8 @@ import type { GestureResponderEvent, ViewStyle } from "react-native";
 import type { StyleProp, ViewProps } from "react-native";
 import { Pressable, StyleSheet, View } from "react-native";
 import { useTheme } from "../theme-provider";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { SpTypo } from "./sp-typo";
 
 interface SpCardProps extends ViewProps {
     style?: StyleProp<ViewStyle>;
@@ -46,9 +48,10 @@ export function SpCard(props: SpCardProps) {
             backgroundColor: "transparent",
             borderWidth: 0,
             borderColor: "transparent",
+            boxShadow: "none",
         },
     } as const;
-    
+
     if (!onPress) {
         return (
             <View
@@ -101,6 +104,34 @@ export function SpCardHeader(props: ViewProps) {
     )
 }
 
+export function SpCardBox(props: ViewProps) {
+    const { children, style, ...rest } = props;
+
+    return (
+        <View style={[
+            {
+                padding: 16,
+                flexDirection: 'row',
+                justifyContent: 'space-between'
+            },
+            style
+        ]} {...rest}>
+            {children}
+            <SpCardChevron />
+        </View>
+    )
+}   
+
+export function SpCardChevron() {
+    const theme = useTheme();
+
+    return (
+        <View style={{ justifyContent: 'space-around', alignItems: 'flex-end' }}>
+            <FontAwesome6 name="chevron-right" size={14} color={theme.colors.muted} />
+        </View>
+    )
+}
+
 export function SpCardContent(props: ViewProps) {
     const { children, style, ...rest } = props;
 
@@ -115,6 +146,39 @@ export function SpCardContent(props: ViewProps) {
     )
 }
 
+export function SpCardBadge({
+    text, icon, color = "primary"
+}: {
+    text?: string,
+    icon?: keyof typeof FontAwesome6.glyphMap,
+    color?: "primary" | "secondary" | "tertiary" | "error" | "warning"
+}) {
+    const theme = useTheme();
+
+    const colors = {
+        primary: theme.colors.primary,
+        secondary: theme.colors.secondary,
+        tertiary: theme.colors.tertiary,
+        error: theme.colors.error,
+        warning: theme.colors.warning
+    }
+
+    return (
+        <View style={[styles.createdBadge, { backgroundColor: colors[color] + '15' }]}>
+            {icon && (
+                <View style={[styles.badgeIcon, { backgroundColor: colors[color] + '30' }]}>
+                    <FontAwesome6 name={icon} size={10} color={colors[color]} />
+                </View>
+            )}
+            {text && (
+                <SpTypo variant='small' style={[styles.badgeText, { color: colors[color] }]}>
+                    {text}
+                </SpTypo>
+            )}
+        </View>
+    )
+}
+
 const styles = StyleSheet.create({
     card: {
         borderRadius: 6,
@@ -125,7 +189,28 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.1,
         shadowRadius: 4,
-        elevation: 0,
-        gap: 8
+        elevation: 0
     },
+    createdBadge: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        paddingHorizontal: 10,
+        paddingVertical: 6,
+        zIndex: 1,
+    },
+    badgeIcon: {
+        width: 16,
+        height: 16,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    badgeText: {
+        fontWeight: '600',
+        fontSize: 12,
+    }
 });

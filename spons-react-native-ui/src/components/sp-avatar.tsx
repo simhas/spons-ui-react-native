@@ -15,7 +15,7 @@ export function SpAvatar(props: SpAvatarProps) {
     function getColorFromText(text: string) {
         const hash = text.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
         const hue = hash % 360;
-        return `hsl(${hue}, 100%, 35%)`;
+        return `hsl(${hue}, 100%, 35%, 0.8)`;
     }
 
     function getFontSizeFromSize(size: number) {
