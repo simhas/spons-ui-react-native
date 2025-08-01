@@ -104,8 +104,8 @@ export function SpCardHeader(props: ViewProps) {
     )
 }
 
-export function SpCardBox(props: ViewProps) {
-    const { children, style, ...rest } = props;
+export function SpCardBox(props: ViewProps & { hideChevron?: boolean }) {
+    const { children, style, hideChevron = false, ...rest } = props;
 
     return (
         <View style={[
@@ -117,10 +117,10 @@ export function SpCardBox(props: ViewProps) {
             style
         ]} {...rest}>
             {children}
-            <SpCardChevron />
+            {!hideChevron && <SpCardChevron />}
         </View>
     )
-}   
+}
 
 export function SpCardChevron() {
     const theme = useTheme();
