@@ -151,7 +151,7 @@ export function SpCardBadge({
 }: {
     text?: string,
     icon?: keyof typeof FontAwesome6.glyphMap,
-    color?: "primary" | "secondary" | "tertiary" | "error" | "warning"
+    color?: "primary" | "secondary" | "tertiary" | "error" | "warning" | "muted" | "default" | "card" | "border"
 }) {
     const theme = useTheme();
 
@@ -160,7 +160,11 @@ export function SpCardBadge({
         secondary: theme.colors.secondary,
         tertiary: theme.colors.tertiary,
         error: theme.colors.error,
-        warning: theme.colors.warning
+        warning: theme.colors.warning,
+        muted: theme.colors.muted,
+        default: theme.colors.background,
+        card: theme.colors.card,
+        border: theme.colors.border,
     }
 
     return (
